@@ -1,9 +1,137 @@
-/* CSS is how you can add style to your website, such as colors, fonts, and positioning of your
-   HTML content. To learn how to do something, just try searching Google for questions like
-   "how to change link color." */
+@font-face {
+    font-family: Nunito;
+    src: url(https://sadhost.neocities.org/fonts/Nunito-Regular.ttf);
+}
+@font-face {
+    font-family: Nunito;
+    src: url(https://sadhost.neocities.org/fonts/Nunito-Bold.ttf);
+    font-weight: bold;
+}
+@font-face {
+    font-family: Nunito;
+    src: url(https://sadhost.neocities.org/fonts/Nunito-Italic.ttf);
+    font-style: italic;
+}
+@font-face {
+    font-family: Nunito;
+    src: url(https://sadhost.neocities.org/fonts/Nunito-BoldItalic.ttf);
+    font-weight: bold;
+    font-style: italic;
+}
+@font-face {
+    font-family: Atkinson;
+    src: url(fonts/AtkinsonHyperlegible-Italic.ttf);
+    font-style: italic;
+}
+
+:root{
+  --backgroundGreen: rgb(221, 251, 217);
+  --borderGreen: rgb(41, 194, 41);
+  --textGreen: rgb(14, 80, 3);
+
+  --backgroundPink: rgb(251, 217, 240);
+  --borderPink:rgb(206, 116, 159);
+  --textPink: rgb(157, 33, 110);
+
+  --backgroundBlue: rgb(206, 224, 255);
+  --borderBlue: rgb(41, 86, 194);
+  --textBlue: rgb(9, 6, 108);
+}
+
+html{
+  height: 100vh;
+}
 
 body {
-  background-color: white;
-  color: black;
-  font-family: Verdana;
+  font-family: Atkinson;
+  background-color: var(--backgroundGreen);
+  color: var(--textGreen);
+  position: relative;
+  height: 100%;
+  margin: 0;
+}
+
+#centre{
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%);
+  position: absolute;
+  margin: auto;
+  width: 80%;
+  max-width: 600px;
+
+}
+
+#navbar{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+  a{
+    text-align: center;
+    text-wrap-mode: nowrap;
+    width: 100%;
+    font-style: italic;
+    padding: 5px;
+    margin: 2px 0px 2px 0px;
+    border: dashed var(--borderGreen) 1px;
+    text-decoration: none;
+    color: var(--textGreen);
+  }
+  a:hover{
+    font-weight: bold;
+  }
+}
+
+#lowerPane{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  div{
+    padding: 5px;
+  }
+}
+
+#updatesPane{
+  max-width: 66%;
+  border: dashed var(--borderGreen) 1px;
+  overflow: auto;
+  ul {
+    list-style-type: circle;
+    padding-left: 20px;
+  }
+  h4{
+    margin: 3px;
+  }
+}
+
+#colourScheme{
+  border: dashed var(--borderGreen) 1px;
+  ul{
+    list-style-type: none;
+    padding: 5px;
+    margin: 0;
+  }
+  li:hover{
+    font-weight: bold;
+  }
+  p{
+    font-weight: bold;
+    margin: 3px;
+  }
+}
+
+#bottom{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 10px;
+  transform: translateY(-50%);
+  a{
+    color: var(--borderGreen);
+    text-decoration: none;
+  }
+  a:hover{
+    text-decoration: underline;
+  }
 }

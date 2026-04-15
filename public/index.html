@@ -3,30 +3,88 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Site!"</title>The web site of kilometres03
-    <!-- The style.css file allows you to change the look of your web pages.
-         If you include the next line in all your web pages, they will all share the same look.
-         This makes it easier to make new pages for your site. -->
-    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <title>It's Miles From Here...</title>
+    <link href="style.css" rel="stylesheet" type="text/css" media="all">
   </head>
   <body>
-    <h1>Welcome to my Website!</h1>
 
-    <p>This is a paragraph! Here's how you make a link: <a href="https://neocities.org">Neocities</a>.</p>
+    <div id="centre">
 
-    <p>Here's how you can make <strong>bold</strong> and <em>italic</em> text.</p>
+      <div id="navbar">
+        <a href="">Projects</a>
+        <a href="">Photography</a>
+        <a href="https://www.linkedin.com/in/miles-brindley-64b5322a2/" target="_blank">LinkedIn ↗</a>
+        <a href="https://github.com/Kilometres1" target="_blank">GitHub ↗</a>
+        <a href="inspiration.html">Site Inspo</a>
+        <a href="">About?</a>
+      </div>
 
-    <p>Here's how you can add an image:</p>
-    <img src="/neocities.png" alt="Site hosted by Neocities">
+      <div id="introText">
+        <p>Welcome to my website! This is just a place where I can keep a collection of my interests and things I'm currently working on, however this is still work in progress!</p>
+      </div>
 
-    <p>Here's how to make a list:</p>
+      <div id="lowerPane">
 
-    <ul>
-      <li>First thing</li>
-      <li>Second thing</li>
-      <li>Third thing</li>
-    </ul>
+        <div id="updatesPane">
+          <h4>Updates:</h4>
+          <ul>
+            <li>April 15th 2026: The first big changes, we have a color scheme selector.</li>
+            <li>April 13th 2026: This site was made!</li>
+          </ul>
+        </div>
 
-    <p>To learn more HTML/CSS, check out these <a href="https://neocities.org/tutorials">tutorials</a>!</p>
+        <div id="colourScheme">
+          <p>Colour Scheme:</p>
+          <ul>
+            <li style="color: var(--textGreen);" onclick="setGreen()" id="greenScheme">Green</li>
+            <li style="color: var(--borderPink);" onclick="setPink()" id="pinkScheme">Pink</li>
+            <li style="color: var(--borderBlue);" onclick="setBlue()" id="pinkScheme">Blue</li>
+            <li>Black</li>
+          </ul>
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+    <div id="bottom">
+      Coded by Me, Hosted on <a href="https://neocities.org/">Neocities</a>
+    </div>
   </body>
+
+  <script>
+    function setGreen(){
+      document.body.style.background = "var(--backgroundGreen)";
+      document.body.style.color = "var(--textGreen)";
+      document.getElementById("updatesPane").style.border = "dashed var(--borderGreen) 1px";
+      document.getElementById("colourScheme").style.border = "dashed var(--borderGreen) 1px";
+      for (var item in document.getElementsByTagName("a")){
+        document.getElementsByTagName("a")[item].style.color = "var(--textGreen)";
+        document.getElementsByTagName("a")[item].style.border = "dashed var(--borderGreen) 1px";
+
+      }
+    }
+    function setPink(){
+      document.body.style.background = "var(--backgroundPink)";
+      document.body.style.color = "var(--textPink)";
+      document.getElementById("updatesPane").style.border = "dashed var(--borderPink) 1px";
+      document.getElementById("colourScheme").style.border = "dashed var(--borderPink) 1px";
+      for (var item in document.getElementsByTagName("a")){
+        document.getElementsByTagName("a")[item].style.color = "var(--textPink)";
+        document.getElementsByTagName("a")[item].style.border = "dashed var(--borderPink) 1px";
+      }
+    }
+    function setBlue(){
+      document.body.style.background = "var(--backgroundBlue)";
+      document.body.style.color = "var(--textBlue)";
+      document.getElementById("updatesPane").style.border = "dashed var(--borderBlue) 1px";
+      document.getElementById("colourScheme").style.border = "dashed var(--borderBlue) 1px";
+      for (var item in document.getElementsByTagName("a")){
+        document.getElementsByTagName("a")[item].style.color = "var(--textBlue)";
+        document.getElementsByTagName("a")[item].style.border = "dashed var(--borderBlue) 1px";
+      }
+    }
+  </script>
 </html>
