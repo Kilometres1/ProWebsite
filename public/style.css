@@ -44,15 +44,15 @@ html{
 
 body {
   font-family: Atkinson;
-  background-color: var(--backgroundGreen);
-  color: var(--textGreen);
+  background-color: var(--backgroundPink);
+  color: var(--textPink);
   position: relative;
   height: 100%;
   margin: 0;
 }
 
 #centre{
-  top: 25%;
+  top: 10%;
   left: 50%;
   transform: translate(-50%);
   position: absolute;
@@ -74,9 +74,9 @@ body {
     font-style: italic;
     padding: 5px;
     margin: 2px 0px 2px 0px;
-    border: dashed var(--borderGreen) 1px;
+    border: dashed var(--borderPink) 1px;
     text-decoration: none;
-    color: var(--textGreen);
+    color: var(--textPink);
   }
   a:hover{
     font-weight: bold;
@@ -94,7 +94,7 @@ body {
 
 #updatesPane{
   max-width: 66%;
-  border: dashed var(--borderGreen) 1px;
+  border: dashed var(--borderPink) 1px;
   overflow: auto;
   ul {
     list-style-type: circle;
@@ -106,7 +106,7 @@ body {
 }
 
 #colourScheme{
-  border: dashed var(--borderGreen) 1px;
+  border: dashed var(--borderPink) 1px;
   ul{
     list-style-type: none;
     padding: 5px;
@@ -128,7 +128,7 @@ body {
   margin-right: 10px;
   transform: translateY(-50%);
   a{
-    color: var(--borderGreen);
+    color: var(--borderPink);
     text-decoration: none;
   }
   a:hover{
