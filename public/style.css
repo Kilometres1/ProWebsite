@@ -87,6 +87,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  max-height: 140px;
   div{
     padding: 5px;
   }
@@ -96,6 +97,7 @@ body {
   max-width: 66%;
   border: dashed var(--borderPink) 1px;
   overflow: auto;
+  scrollbar-width: none;  
   ul {
     list-style-type: circle;
     padding-left: 20px;
