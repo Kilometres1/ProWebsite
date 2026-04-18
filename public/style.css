@@ -24,18 +24,18 @@
     font-style: italic;
 }
 
-:root{
-  --backgroundGreen: rgb(221, 251, 217);
-  --borderGreen: rgb(41, 194, 41);
-  --textGreen: rgb(14, 80, 3);
 
-  --backgroundPink: rgb(251, 217, 240);
-  --borderPink:rgb(206, 116, 159);
-  --textPink: rgb(157, 33, 110);
+[data-theme="light"]{
+  --background: rgb(251, 217, 240);
+  --border:rgb(206, 116, 159);
+  --text: rgb(157, 33, 110);
 
-  --backgroundBlue: rgb(206, 224, 255);
-  --borderBlue: rgb(41, 86, 194);
-  --textBlue: rgb(9, 6, 108);
+}
+
+[data-theme="dark"]{
+  --background: rgb(0,0,0);
+  --border: rgb(206, 116, 159);
+  --text: rgb(255, 189, 230);
 }
 
 html{
@@ -44,8 +44,8 @@ html{
 
 body {
   font-family: Atkinson;
-  background-color: var(--backgroundPink);
-  color: var(--textPink);
+  background-color: var(--background);
+  color: var(--text);
   position: relative;
   height: 100%;
   margin: 0;
@@ -58,7 +58,7 @@ body {
   position: absolute;
   margin: auto;
   width: 80%;
-  max-width: 600px;
+  max-width: 800px;
 
 }
 
@@ -66,21 +66,52 @@ body {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
+  flex-wrap: nowrap;
   width: 100%;
-  a{
-    text-align: center;
-    text-wrap-mode: nowrap;
+  > div{
     width: 100%;
+    text-align: center;
     font-style: italic;
-    padding: 5px;
+    padding: 5px 0px 5px 0px;
     margin: 2px 0px 2px 0px;
-    border: dashed var(--borderPink) 1px;
-    text-decoration: none;
-    color: var(--textPink);
+    border: dashed var(--border) 1px;
+    a{
+      text-decoration: none;
+      color: var(--text);
+    }
+
+  }
+  > div:hover > a{
+    font-weight: bold;
+  }
+}
+
+.navbarDropdown{
+  position: relative;
+  cursor: pointer;
+  .dropdownContent{
+    top: 100%;
+    display: none;
+    position: absolute;
+  }
+
+}
+.dropdownContent{
+  background-color: var(--background);
+  a{
+    padding: 5px 0px 5px 0px;
+    display: block;
+    min-width: 130px;
+    border: dashed var(--border) 1px;
+    color: var(--text);
   }
   a:hover{
     font-weight: bold;
   }
+}
+
+.navbarDropdown:hover .dropdownContent{
+  display: block;
 }
 
 #lowerPane{
@@ -95,7 +126,7 @@ body {
 
 #updatesPane{
   max-width: 66%;
-  border: dashed var(--borderPink) 1px;
+  border: dashed var(--border) 1px;
   overflow: auto;
   scrollbar-width: none;  
   ul {
@@ -108,7 +139,7 @@ body {
 }
 
 #colourScheme{
-  border: dashed var(--borderPink) 1px;
+  border: dashed var(--border) 1px;
   ul{
     list-style-type: none;
     padding: 5px;
@@ -126,12 +157,27 @@ body {
 #bottom{
   position: absolute;
   bottom: 0;
-  right: 0;
-  margin-right: 10px;
-  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--border);
+  color: var(--text);
+  
+  > *{
+    margin: 5px;
+  }
+  button{
+    font-style: italic;
+    font-size: 12pt;
+    background: none;
+    color: var(--background);
+    border: 0;
+    cursor: pointer;
+  }
   a{
-    color: var(--borderPink);
+    color: var(--border);
     text-decoration: none;
+    color: var(--background);
   }
   a:hover{
     text-decoration: underline;

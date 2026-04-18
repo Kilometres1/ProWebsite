@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html data-theme="light">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>It's Miles From Here...</title>
     <link href="style.css" rel="stylesheet" type="text/css" media="all">
+    <script src="scripts.js" defer></script>
   </head>
   <body>
 
@@ -12,16 +13,21 @@
 
       <img src="flowersDith.png" alt="" style="width: 100%;height: 150px;object-fit:cover;">
       <div id="navbar">
-        <a href="">Projects</a>
-        <a href="">Photography</a>
-        <a href="https://www.linkedin.com/in/miles-brindley-64b5322a2/" target="_blank">LinkedIn ↗</a>
-        <a href="https://github.com/Kilometres1" target="_blank">GitHub ↗</a>
-        <a href="inspiration.html">Site Inspo</a>
-        <a href="">About?</a>
+        <div class="navbarDropdown">
+          <a>Projects</a>
+          <div class="dropdownContent">
+            <a href="projectUHF.html">UHF Station</a>
+            <a href="#">L-Band Station</a>
+          </div>
+        </div>
+        <div><a href="">Photography</a></div>
+        <div><a href="https://www.linkedin.com/in/miles-brindley-64b5322a2/" target="_blank">LinkedIn↗</a></div>
+        <div><a href="https://github.com/Kilometres1" target="_blank">GitHub↗</a></div>
+        <div><a href="about.html">About?</a></div>
       </div>
 
       <div id="introText">
-        <p>Welcome to my website! This is just a place where I can keep a collection of my interests and things I'm currently working on, however this is still work in progress!</p>
+        <p>Welcome to my website! This is just a place where I can keep a collection of my interests and things I'm currently working on. Work in progress!</p>
       </div>
 
       <div id="lowerPane">
@@ -29,26 +35,16 @@
         <div id="updatesPane">
           <h4>Updates:</h4>
           <ul>
+            <li>April 17th 2026: Posted my work on the UHF Project page!</li>
             <li>April 15th 2026: The first big changes, we have a color scheme selector.</li>
             <li>April 13th 2026: This site was made!</li>
           </ul>
           <h4>To Do:</h4>
           <ul>
             <li>Mobile Formatting</li>
-            <li>Projects Page</li>
+            <li>Projects Pages</li>
             <li>Photography Page</li>
             <li>about Page</li>
-            <li>change pictures when theme changes</li>
-          </ul>
-        </div>
-
-        <div id="colourScheme">
-          <p>Colour Scheme:</p>
-          <ul>
-            <li style="color: var(--textGreen);" onclick="setGreen()" id="greenScheme">Green</li>
-            <li style="color: var(--borderPink);" onclick="setPink()" id="pinkScheme">Pink</li>
-            <li style="color: var(--borderBlue);" onclick="setBlue()" id="pinkScheme">Blue</li>
-            <li>Black</li>
           </ul>
         </div>
 
@@ -56,44 +52,11 @@
 
 
     </div>
-
+    
 
     <div id="bottom">
-      Coded by Me, Hosted on <a href="https://neocities.org/">Neocities</a>
+      <button type="button" data-theme-toggle aria-label="Change to light theme">Change to light theme (or icon here)</button>
+      <div>Coded by Me, Hosted on <a href="https://neocities.org/">Neocities</a></div>
     </div>
   </body>
-
-  <script>
-    function setGreen(){
-      document.body.style.background = "var(--backgroundGreen)";
-      document.body.style.color = "var(--textGreen)";
-      document.getElementById("updatesPane").style.border = "dashed var(--borderGreen) 1px";
-      document.getElementById("colourScheme").style.border = "dashed var(--borderGreen) 1px";
-      for (var item in document.getElementsByTagName("a")){
-        document.getElementsByTagName("a")[item].style.color = "var(--textGreen)";
-        document.getElementsByTagName("a")[item].style.border = "dashed var(--borderGreen) 1px";
-
-      }
-    }
-    function setPink(){
-      document.body.style.background = "var(--backgroundPink)";
-      document.body.style.color = "var(--textPink)";
-      document.getElementById("updatesPane").style.border = "dashed var(--borderPink) 1px";
-      document.getElementById("colourScheme").style.border = "dashed var(--borderPink) 1px";
-      for (var item in document.getElementsByTagName("a")){
-        document.getElementsByTagName("a")[item].style.color = "var(--textPink)";
-        document.getElementsByTagName("a")[item].style.border = "dashed var(--borderPink) 1px";
-      }
-    }
-    function setBlue(){
-      document.body.style.background = "var(--backgroundBlue)";
-      document.body.style.color = "var(--textBlue)";
-      document.getElementById("updatesPane").style.border = "dashed var(--borderBlue) 1px";
-      document.getElementById("colourScheme").style.border = "dashed var(--borderBlue) 1px";
-      for (var item in document.getElementsByTagName("a")){
-        document.getElementsByTagName("a")[item].style.color = "var(--textBlue)";
-        document.getElementsByTagName("a")[item].style.border = "dashed var(--borderBlue) 1px";
-      }
-    }
-  </script>
 </html>
