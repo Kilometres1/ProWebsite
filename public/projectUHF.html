@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html data-theme="light">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>It's Miles From Here...</title>
+    <link href="projectUHFStyle.css" rel="stylesheet" type="text/css" media="all">
+    <script src="scripts.js" defer></script>
+  </head>
+  <body>
+
+    <div id="centre">
+        <h2>Weather Satellite Station</h2>
+        <h3>UHF Reception</h3>
+        <p>This project aims to provide regular, frequent images of weather and cloud conditions over Western Europe.</p>
+        <div id="photoGallery">
+            <a href="projectResources/UHF/msu_mr_rgb_AVHRR_221_False_Color_corrected.png"><img src="projectResources/UHF/msu_mr_rgb_AVHRR_221_False_Color_corrected.png" alt=""></a>
+            <a href="projectResources/UHF/msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png"><img src="projectResources/UHF/msu_mr_rgb_AVHRR_3a21_False_Color_corrected.png" alt=""></a>
+            <a href="projectResources/UHF/msu_mr_rgb_MSA_corrected.png"><img src="projectResources/UHF/msu_mr_rgb_MSA_corrected.png" alt=""></a>
+        </div>
+        <p class="caption">An example of the output images from one pass. click for full image.</p>
+        <h4>Transmitters</h4>
+        <p>These images are captured from weather satellites, specifically the Russian Meteor-M 2-4 and 2-3 satellites. These satellites were chosen for this, as they both transmit a constant stream of LRIT data in the UHF (specifically 137MHz) band. This frequency is very easy to recieve with an omnidirectional antenna, meaning a permanent reciving station is easy to maintain.</p>
+        <h4>Reception Pipeline</h4>
+        <p>The signals are transmitted at 137MHz, and recieved by an omnidirectional QFH (Quadrifilar Helix) antenna mounted ~3m above the ground.</p>
+        <div id="photoGallery">
+          <img src="projectResources/UHF/antenna.jpg" alt="" style="height: 400px;position: relative; margin: auto;">
+        </div>
+        <p class="caption">The antenna used to recieve the data.</p>
+        <p>The signal is passed though a Bias Tee-powered Low Noise Amplifier, and then through ~30m of coaxial cable, until it reaches the reciever. The reciever is a LibreSDR B210 Software defined radio.</p>
+        <p>This SDR is connected to a Raspberry Pi running Satdump, a "generic satellite data processing software". This decodes and projects the images such that distortions and the edges of the frame is minimised - at the cost of some resolution.</p>
+        <p>The final images are saved to a NAS, and will be made available to the public.</p>
+        [image of pipeline]
+        <h4>Future Plans</h4>
+        <p>I plan to change the processing settings of Satdump, to get more control over the final images and make some timelapses. If this proves difficult I may try and make my own decoder, I think this would be a good way to practice my programming skills.</p>
+        <p>Making a way to easily show changes in the clouds over time, like on weather apps, and have some amount of analysis would also be an interesting endeavour.</p>
+        <p>I would like to get higher-resolution imagery, so I'm trying to make an L-Band recieving setup, but that's <a href="">work in progress</a> right now.</p>
+        <h4>Limitations</h4>
+        <p>One major drawback of this system is that the satellites are in a sun-synchronous orbit, meaning they only pass overhead twice a day, 12 hours apart. Because of this, there are large periods (6+ hours) where no imagery is available.</p>
+        <p>Another is that due to the decomissioning of the US' POES satellites in late 2025, the Meteor Satellites are currently the only two to transmit on the UHF frequency band. This is because it is a low frequency, with a low bandwidth, so only a low data-rate can be achieved. In this case LRPT is only 80kbps. </p>
+        <p>The low data rate of LRPT means that only 3 colour channels can be transmitted. Whilst these channels are useful to produce false colour images, they are all of wavelengths in the visible spectrum, meaning that the images are black during the night. And so all of the night passes of the satellites are useless for cloud-cover observation.</p>
+
+    </div>
+
+    <div id="bottom">
+      <button type="button" data-theme-toggle aria-label="Change to light theme">Change to light theme (or icon here)</button>
+      <div>Coded by Me, Hosted on <a href="https://neocities.org/">Neocities</a></div>
+    </div>
+  </body>
+</html>
