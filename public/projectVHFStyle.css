@@ -62,7 +62,7 @@ a.return{
 #centre{
   position: relative;
   margin: auto;
-  width: 80%;
+  width: 95%;
   max-width: 800px;
 
 }
@@ -110,7 +110,6 @@ a.popup{
     padding: 5px;
     background-color: var(--text);
     color: var(--background);
-    cursor: pointer;
   }
 }
 

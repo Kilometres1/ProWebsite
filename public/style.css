@@ -69,7 +69,8 @@ body {
   flex-wrap: nowrap;
   width: 100%;
   > div{
-    width: 100%;
+    width: 200px;
+    min-width: max-content;
     text-align: center;
     font-style: italic;
     padding: 5px 0px 5px 0px;
@@ -78,6 +79,7 @@ body {
     a{
       text-decoration: none;
       color: var(--text);
+      height:1rem;
     }
 
   }
