@@ -1,0 +1,16 @@
+[data-theme="light"]{
+  --background: #e1d8f7;
+  --backgroundDark: #d7c8f3;
+  --navbar: #b596e5;
+  --border:#a276e3;
+  --text: #000000;
+
+}
+
+[data-theme="dark"]{
+  --background: rgb(0,0,0);
+  --backgroundDark: rgb(0,0,0);
+  --navbar: #9573c7;
+  --border: #b596e5;
+  --text: #e1d8f7;
+}
