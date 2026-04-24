@@ -28,20 +28,6 @@
     font-style: italic;
 }
 
-[data-theme="light"]{
-  --background: rgb(251, 217, 240);
-  --border:rgb(206, 116, 159);
-  --text: rgb(157, 33, 110);
-  --textLink: rgb(231, 1, 142)
-}
-
-[data-theme="dark"]{
-  --background: rgb(0,0,0);
-  --border: rgb(206, 116, 159);
-  --text: rgb(255, 189, 230);
-  --textLink: rgb(234, 127, 193);
-}
-
 body {
   font-family: Atkinson;
   background-color: var(--background);
@@ -67,7 +53,7 @@ a.return{
 
 }
 
-#photoGallery{
+.photoGallery{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -122,19 +108,19 @@ a.popup span:hover,a.popup:hover span{
 }
 
 #bottom{
-  position: relative;
+  position: fixed;
   bottom: 0;
   width: 100%;
   display: flex;
   justify-content: space-between;
   background-color: var(--border);
   color: var(--text);
-  
+  font-style: italic;
   > *{
     margin: 5px;
   }
   button{
-    font-style: italic;
+    
     font-size: 12pt;
     background: none;
     color: var(--background);
