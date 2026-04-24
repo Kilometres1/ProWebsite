@@ -1,0 +1,144 @@
+@font-face {
+    font-family: Nunito;
+    src: url(https://sadhost.neocities.org/fonts/Nunito-Regular.ttf);
+}
+@font-face {
+    font-family: Nunito;
+    src: url(https://sadhost.neocities.org/fonts/Nunito-Bold.ttf);
+    font-weight: bold;
+}
+@font-face {
+    font-family: Nunito;
+    src: url(https://sadhost.neocities.org/fonts/Nunito-Italic.ttf);
+    font-style: italic;
+}
+@font-face {
+    font-family: Nunito;
+    src: url(https://sadhost.neocities.org/fonts/Nunito-BoldItalic.ttf);
+    font-weight: bold;
+    font-style: italic;
+}
+@font-face {
+    font-family: Atkinson;
+    src: url(fonts/AtkinsonHyperlegible-Regular.ttf);
+}
+@font-face {
+    font-family: Atkinson;
+    src: url(fonts/AtkinsonHyperlegible-Italic.ttf);
+    font-style: italic;
+}
+
+html{
+    height: 100vh;
+}
+
+body {
+  font-family: Atkinson;
+  background-color: var(--background);
+  color: var(--text);
+  position: relative;
+  height: 100%;
+  margin: 0;
+}
+
+h2{
+    margin: 0;
+}
+
+a{
+  color: var(--textLink);
+}
+a.return{
+  color: var(--text);
+  text-decoration: none;
+}
+
+#centre{
+    position: relative;
+    margin: auto;
+    top: 10%;
+    width: 95%;
+    max-width: 800px;
+}
+
+.photoGallery{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    max-width: 95vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    img{
+        padding-left: 10px;
+        max-width: 200px;
+        height: 100%;
+    }
+}
+
+.caption{
+    font-style: italic;
+    margin: 0;
+    font-size: 10pt;
+    text-align:center;
+}
+
+a.popup{
+  position: relative;
+  text-decoration: underline dashed;
+
+  span{
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    transition: ease 0.25s;
+    position: absolute;
+    left: 50%;
+    bottom: 5px;
+    transform: translate(-50%,-1rem);
+    max-width: 300px;
+    width: max-content;
+    padding: 5px;
+    background-color: var(--text);
+    color: var(--background);
+  }
+}
+
+a.popup span:hover,a.popup:hover span{
+  visibility: visible;
+
+  
+  opacity: 1;
+
+}
+
+#bottom{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--border);
+  color: var(--text);
+  
+  > *{
+    margin: 5px;
+  }
+  button{
+    font-style: italic;
+    font-size: 12pt;
+    background: none;
+    color: var(--background);
+    border: 0;
+    cursor: pointer;
+  }
+  a{
+    color: var(--border);
+    text-decoration: none;
+    color: var(--background);
+  }
+  a:hover{
+    text-decoration: underline;
+  }
+}
