@@ -84,6 +84,8 @@ body {
     visibility: hidden;
     opacity: 0;
     position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     transition: ease 0.25s;
   }
 
@@ -93,7 +95,7 @@ body {
   a{
     padding: 5px 0px 5px 0px;
     display: block;
-    min-width: 130px;
+    min-width: 120px;
     border: dashed var(--border) 1px;
     color: var(--text);
     

@@ -46,7 +46,7 @@ h2{
 }
 
 a{
-  color: var(--textLink);
+  color: var(--border);
 }
 a.return{
   color: var(--text);

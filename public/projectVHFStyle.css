@@ -39,7 +39,7 @@ body {
 }
 
 a{
-  color: var(--textLink);
+  color: var(--border);
 }
 a.return{
   color: var(--text);
