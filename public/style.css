@@ -37,6 +37,10 @@ body {
   margin: 0;
 }
 
+a{
+  color: var(--border);
+}
+
 #centre{
   top: 5%;
   left: 50%;
@@ -115,8 +119,10 @@ body {
   padding: 10px;
   > div > div > div{
     background-color: var(--background);
-    border: solid var(--navbar);
-    padding: 5px;
+    border: solid var(--border);
+    p{
+      margin-left: 5px;
+    }
 
   }
 }
@@ -142,7 +148,7 @@ body {
 #updatesPane{
   border: dashed var(--border) 1px;
   overflow: auto;
-  max-height: 400px;
+  max-height: 430px;
   ul {
     list-style-type: circle;
     padding-left: 20px;
@@ -159,6 +165,12 @@ body {
       margin-top: 3px;
   }
 
+}
+
+.titleBar{
+  margin-bottom: 10px;
+  padding: 5px;
+  background-color: var(--navbar);
 }
 
 #stamps{
